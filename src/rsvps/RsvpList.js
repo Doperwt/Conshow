@@ -1,18 +1,18 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import RsvpItem from './RsvpItem'
-
+import {rsvps} from '../seed'
 
 class RsvpList extends PureComponent {
 	// static propTypes = {	}
 
-  renderItem(topic) {
-    return <RsvpItem topic={topic} />
+  renderItem(rsvp) {
+    return <RsvpItem rsvp={rsvp} />
   }
 	render() {
-    const topics = this.props.topics
+
 		return (
-      <div> <ol key="list">{topics.map(topic => this.renderItem(topic))}</ol></div>
+      <div key="rsvplist"> {rsvps.map(rsvp => this.renderItem(rsvp))}</div>
 		)
 	}
 }
